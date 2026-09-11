@@ -25,5 +25,8 @@ wss.on('connection',(ws,req)=>{
  });
  ws.on('close',()=>{if(user){room.clients.delete(ws);broadcast(room,{type:'user-left',userId:user.id});}if(room.clients.size===0)rooms.delete(roomName)});
 });
-const PORT=process.env.PORT||8080;
-server.listen(PORT,()=>console.log(`Collab Canvas server running on port ${PORT}`));
+const PORT = process.env.PORT || 8080;
+
+server.listen(PORT, "0.0.0.0", () => {
+    console.log(`Collab Canvas server running on port ${PORT}`);
+});
