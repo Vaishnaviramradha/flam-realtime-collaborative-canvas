@@ -11,7 +11,7 @@ type Message =
   | { type:'user-left'; userId:string }
   | { type:'clear' };
 
-const SERVER_URL = import.meta.env.VITE_WS_URL || 'ws://localhost:8080';
+const SERVER_URL = import.meta.env.VITE_WS_URL || 'wss://flam-collaborative-server.onrender.com';
 const COLORS = ['#111827','#ef4444','#f59e0b','#10b981','#3b82f6','#8b5cf6','#ec4899'];
 const makeId = () => crypto.randomUUID();
 
